@@ -12,6 +12,7 @@ const board_border = 'black';
             ]
 
             let score = 0;
+            let highscore = 0;
             let changing_direction = false;
         let food_x;
         let food_y;
@@ -36,6 +37,7 @@ const board_border = 'black';
             drawFood();
             move_snake();
             drawSnake();
+            highScore();
             main();
           }, 100)
           }
@@ -151,3 +153,41 @@ const board_border = 'black';
                 snake.pop();
               }
             }
+
+            function buttonFunction(){
+              document.getElementById("buttonAppear").innerHTML = '<button onclick="retry()">Retry</button>';
+         }
+         
+         function clearScore()
+         {
+           score = 0;
+           document.getElementById('score').innerHTML = score;
+         }
+
+         function retry()
+         {snake[0]={x: 200, y: 200}
+           snake[1]={x: 190, y: 200}
+           snake[2]={x: 180, y: 200}
+           snake[3]={x: 170, y: 200}
+           snake[4]={x: 160, y: 200}
+
+           dx = 10;
+           dy = 0;
+
+          snake.splice(5,200);
+
+          clearScore();
+           clearCanvas();
+           drawFood();
+            drawSnake();
+            main();
+         }
+              
+var i = 0;
+
+function highScore()
+{
+  for( i = score; i > highscore;)
+  highscore = score;
+  document.getElementById('highscore').innerHTML = highscore;
+}              

@@ -18,14 +18,6 @@ const weekdays = [
   "Friday",
   "Saturday",
 ];
-// class calendarEvent {
-//   constructor(date) {
-//     this.eventDate = date;
-//     this.eventTitle = "";
-
-//   }
-
-// }
 
 function openModal(date) {
   clicked = date;
@@ -64,9 +56,10 @@ function load() {
   });
   const paddingDays = weekdays.indexOf(dateString.split(", ")[0]);
 
-  document.getElementById(
-    "monthDisplay"
-  ).innerText = `${dt.toLocaleDateString("en-us", { month: "long" })} ${year}`;
+  document.getElementById("monthDisplay").innerText = `${dt.toLocaleDateString(
+    "en-us",
+    { month: "long" }
+  )} ${year}`;
 
   calendar.innerHTML = "";
 
@@ -117,7 +110,6 @@ function saveEvent() {
     events.push({
       date: clicked,
       title: eventTitleInput.value,
-      // color:
     });
 
     localStorage.setItem("events", JSON.stringify(events));
@@ -132,13 +124,6 @@ function deleteEvent() {
   localStorage.setItem("events", JSON.stringify(events));
   closeModal();
 }
-
-function colorGreen(el) {
-  //document.getElementById("greenButton").style.color = "green";
-  // events.style.backgroundColor = "green";
-//   document.getElementById(el) = currentElement;
-//   currentElement.style.backgroundColor = "green";
-// }
 
 function initButtons() {
   document.getElementById("nextButton").addEventListener("click", () => {
@@ -157,12 +142,6 @@ function initButtons() {
     .getElementById("deleteButton")
     .addEventListener("click", deleteEvent);
   document.getElementById("closeButton").addEventListener("click", closeModal);
-  // document
-  //   .getElementById("greenButton")
-  //   .addEventListener("click", colorGreen(this));
-  // document.getElementById("blue").addEventListener("click", blue);
-  // document.getElementById("red").addEventListener("click", red);
-  // document.getElementById("purple").addEventListener("click", purple);
 }
 
 initButtons();

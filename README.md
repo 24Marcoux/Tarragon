@@ -1,3 +1,3 @@
 # Tarragon
 
-Project Tarragon is intended to educate us and give us a long-lasting interest in coding, while also producing a usable product which will serve to help others hold long lasting interests in what they choose.
+Project Tarragon is intended to educate us and give us a long-lasting interest in coding, while also producing a usable product which will serve to help others hold long lasting interests in what they choose through good organization. Our project is a simple calendar with events which can be added on to specific days. The three documents of code which create this calendar are in the main (script.js, style.css, and index.html). Additionally, we have added our classic "snake game" into the repo (under Snake Game folder), which was part of our journey of learning to code leading up to our final project, the calendar. 
